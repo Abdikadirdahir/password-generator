@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var person = alert("8 characters and no more than 128 characters")
 var arrayUpper = ["A", "B", "C", "D", "E", "F","G","H","I","J","k","L","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
 var upperCaseInquriy = confirm("Do you want uppercase letters")
@@ -12,7 +12,7 @@ var password ="";
 
 
 if(upperCaseInquriy == true){
-  var person = prompt("choose any uppercase letters " + arrayUpper)
+  var person = prompt("choose any uppercase letters" + arrayUpper)
 } else {
   console.warn("okay")
 }
@@ -42,7 +42,16 @@ if(numberCaseInquriy == true){
   console.warn("okay")
 }
 
+var arraySpecial =["!","@","#","$","%","^","&","*","(",")"]
+var specialCaseInquriy = confirm(" Do you want special Characters")
 
+console.log(specialCaseInquriy)
+
+if(specialCaseInquriy == true){
+  var person = prompt("choose any special character " + specialCaseInquriy)
+} else {
+  console.warn("okay")
+}
 
 
 // Write password to the #password input
