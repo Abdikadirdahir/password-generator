@@ -1,6 +1,7 @@
+var possibleArray = []
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var person = alert("8 characters and no more than 128 characters")
+var person = prompt("8 characters and no more than 128 characters")
 var arrayUpper = ["A", "B", "C", "D", "E", "F","G","H","I","J","k","L","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
 var upperCaseInquriy = confirm("Do you want uppercase letters")
@@ -12,7 +13,10 @@ var password ="";
 
 
 if(upperCaseInquriy == true){
-  var person = prompt("choose any uppercase letters" + arrayUpper)
+  for (var i = 0; i < 26; i++) {
+    possibleArray.push(arrayUpper[i])
+  }
+
 } else {
   console.warn("okay")
 }
@@ -24,7 +28,9 @@ var lowerCaseInquriy = confirm("Do you want lowercase letters")
 console.log(lowerCaseInquriy )
 
 if(lowerCaseInquriy == true){
-  var person = prompt("choose any lowercase letter " + arrayLower)
+  for (var i = 0; i < 26; i++) {
+    possibleArray.push(arrayLower[i])
+  }
 } else {
   console.warn("okay")
 }
@@ -37,7 +43,9 @@ var numberCaseInquriy = confirm("Do you want numbers")
 console.log(numberCaseInquriy)
 
 if(numberCaseInquriy == true){
-  var person = prompt("choose any number " + arrayNumbers)
+  for (var i = 0; i < 10; i++) {
+    possibleArray.push(arrayNumbers[i])
+  }
 } else {
   console.warn("okay")
 }
@@ -48,23 +56,33 @@ var specialCaseInquriy = confirm(" Do you want special Characters")
 console.log(specialCaseInquriy)
 
 if(specialCaseInquriy == true){
-  var person = prompt("choose any special character " + specialCaseInquriy)
+  for (var i = 0; i < 10; i++) {
+    possibleArray.push(arraySpecial[i])
+  }
 } else {
   console.warn("okay")
 }
 
 
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("Password");
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
 
 function generatePassword(){
-  console.log("")
+var randomArray = []
+
+
+for (var i = 0; i < person; i++) {
+  randomArray.push(possibleArray[Math.floor(Math.random() * possibleArray.length)])
+}
+
+  return randomArray.join("")
 }
 
 // Add event listener to generate button
